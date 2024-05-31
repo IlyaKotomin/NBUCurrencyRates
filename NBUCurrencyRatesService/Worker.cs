@@ -1,24 +1,28 @@
+using System.Globalization;
+using NBUCurrencyRatesService.API;
+using NBUCurrencyRatesService.Configuration;
+
 namespace NBUCurrencyRatesService;
 
-public class Worker : BackgroundService
+// ReSharper disable once SuggestBaseTypeForParameterInConstructor
+public class Worker(ILogger<Worker> logger, IConfiguration configuration) : BackgroundService
 {
-    private readonly ILogger<Worker> _logger;
-
-    public Worker(ILogger<Worker> logger)
-    {
-        _logger = logger;
-    }
+    private readonly Config _config = new(configuration, logger);
+    private readonly NBUGrabber _grabber = new(logger);
+    private readonly RatesWriter _writer = new(logger);
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            if (_logger.IsEnabled(LogLevel.Information))
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            }
+            _config.Reload();
 
-            await Task.Delay(1000, stoppingToken);
+            var rates = await _grabber.FetchRates();
+
+            if (rates != null) _writer.Save(rates, _config.OutputPath, _config.OutputFileName, _config.FileType);
+
+            logger.LogInformation("Loop done: {Date}", DateTime.Now.ToString(CultureInfo.InvariantCulture));
+            await Task.Delay(_config.FetchFrequency, stoppingToken);
         }
     }
 }

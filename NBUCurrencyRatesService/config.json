@@ -1,0 +1,13 @@
+{
+  //In milliseconds
+  "FetchFrequency": 5000,
+  
+  //Default path is AppContext.BaseDirectory
+  "OutputPath": "",
+  
+  //Default name is Rates
+  "OutputFileName": "Rates",
+  
+  //Default name is json
+  "FileType": ""          
+}

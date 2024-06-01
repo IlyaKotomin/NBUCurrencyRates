@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: NBUCurrencyRatesService.Configuration
+  commentId: N:NBUCurrencyRatesService.Configuration
+  id: NBUCurrencyRatesService.Configuration
+  children:
+  - NBUCurrencyRatesService.Configuration.Config
+  - NBUCurrencyRatesService.Configuration.OutputType
+  langs:
+  - csharp
+  - vb
+  name: NBUCurrencyRatesService.Configuration
+  nameWithType: NBUCurrencyRatesService.Configuration
+  fullName: NBUCurrencyRatesService.Configuration
+  type: Namespace
+  assemblies:
+  - NBUCurrencyRatesService
+references:
+- uid: NBUCurrencyRatesService.Configuration.Config
+  commentId: T:NBUCurrencyRatesService.Configuration.Config
+  href: NBUCurrencyRatesService.Configuration.Config.html
+  name: Config
+  nameWithType: Config
+  fullName: NBUCurrencyRatesService.Configuration.Config
+- uid: NBUCurrencyRatesService.Configuration.OutputType
+  commentId: T:NBUCurrencyRatesService.Configuration.OutputType
+  parent: NBUCurrencyRatesService.Configuration
+  href: NBUCurrencyRatesService.Configuration.OutputType.html
+  name: OutputType
+  nameWithType: OutputType
+  fullName: NBUCurrencyRatesService.Configuration.OutputType
+- uid: NBUCurrencyRatesService.Configuration
+  commentId: N:NBUCurrencyRatesService.Configuration
+  href: NBUCurrencyRatesService.html
+  name: NBUCurrencyRatesService.Configuration
+  nameWithType: NBUCurrencyRatesService.Configuration
+  fullName: NBUCurrencyRatesService.Configuration
+  spec.csharp:
+  - uid: NBUCurrencyRatesService
+    name: NBUCurrencyRatesService
+    href: NBUCurrencyRatesService.html
+  - name: .
+  - uid: NBUCurrencyRatesService.Configuration
+    name: Configuration
+    href: NBUCurrencyRatesService.Configuration.html
+  spec.vb:
+  - uid: NBUCurrencyRatesService
+    name: NBUCurrencyRatesService
+    href: NBUCurrencyRatesService.html
+  - name: .
+  - uid: NBUCurrencyRatesService.Configuration
+    name: Configuration
+    href: NBUCurrencyRatesService.Configuration.html

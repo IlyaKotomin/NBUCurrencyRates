@@ -1,0 +1,660 @@
+### YamlMime:ManagedReference
+items:
+- uid: NBUCurrencyRatesService.Configuration.Config
+  commentId: T:NBUCurrencyRatesService.Configuration.Config
+  id: Config
+  parent: NBUCurrencyRatesService.Configuration
+  children:
+  - NBUCurrencyRatesService.Configuration.Config.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger)
+  - NBUCurrencyRatesService.Configuration.Config.FetchFrequency
+  - NBUCurrencyRatesService.Configuration.Config.FileType
+  - NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration
+  - NBUCurrencyRatesService.Configuration.Config.OutputFileName
+  - NBUCurrencyRatesService.Configuration.Config.OutputPath
+  - NBUCurrencyRatesService.Configuration.Config.Reload
+  langs:
+  - csharp
+  - vb
+  name: Config
+  nameWithType: Config
+  fullName: NBUCurrencyRatesService.Configuration.Config
+  type: Class
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: Config
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 5
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Class responsible for managing service configuration settings.
+  example: []
+  syntax:
+    content: public class Config
+    content.vb: Public Class Config
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NBUCurrencyRatesService.Configuration.Config.FetchFrequency
+  commentId: F:NBUCurrencyRatesService.Configuration.Config.FetchFrequency
+  id: FetchFrequency
+  parent: NBUCurrencyRatesService.Configuration.Config
+  langs:
+  - csharp
+  - vb
+  name: FetchFrequency
+  nameWithType: Config.FetchFrequency
+  fullName: NBUCurrencyRatesService.Configuration.Config.FetchFrequency
+  type: Field
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: FetchFrequency
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 22
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Frequency at which currency rates are fetched, in milliseconds.
+  example: []
+  syntax:
+    content: public int FetchFrequency
+    return:
+      type: System.Int32
+    content.vb: Public FetchFrequency As Integer
+- uid: NBUCurrencyRatesService.Configuration.Config.FileType
+  commentId: F:NBUCurrencyRatesService.Configuration.Config.FileType
+  id: FileType
+  parent: NBUCurrencyRatesService.Configuration.Config
+  langs:
+  - csharp
+  - vb
+  name: FileType
+  nameWithType: Config.FileType
+  fullName: NBUCurrencyRatesService.Configuration.Config.FileType
+  type: Field
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: FileType
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 27
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Type of output file for saving currency rates.
+  example: []
+  syntax:
+    content: public OutputType FileType
+    return:
+      type: NBUCurrencyRatesService.Configuration.OutputType
+    content.vb: Public FileType As OutputType
+- uid: NBUCurrencyRatesService.Configuration.Config.OutputFileName
+  commentId: F:NBUCurrencyRatesService.Configuration.Config.OutputFileName
+  id: OutputFileName
+  parent: NBUCurrencyRatesService.Configuration.Config
+  langs:
+  - csharp
+  - vb
+  name: OutputFileName
+  nameWithType: Config.OutputFileName
+  fullName: NBUCurrencyRatesService.Configuration.Config.OutputFileName
+  type: Field
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: OutputFileName
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 32
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Name of the output file for saving currency rates.
+  example: []
+  syntax:
+    content: public string OutputFileName
+    return:
+      type: System.String
+    content.vb: Public OutputFileName As String
+- uid: NBUCurrencyRatesService.Configuration.Config.OutputPath
+  commentId: F:NBUCurrencyRatesService.Configuration.Config.OutputPath
+  id: OutputPath
+  parent: NBUCurrencyRatesService.Configuration.Config
+  langs:
+  - csharp
+  - vb
+  name: OutputPath
+  nameWithType: Config.OutputPath
+  fullName: NBUCurrencyRatesService.Configuration.Config.OutputPath
+  type: Field
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: OutputPath
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 37
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Path where the output file for saving currency rates is located.
+  example: []
+  syntax:
+    content: public string OutputPath
+    return:
+      type: System.String
+    content.vb: Public OutputPath As String
+- uid: NBUCurrencyRatesService.Configuration.Config.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger)
+  commentId: M:NBUCurrencyRatesService.Configuration.Config.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger)
+  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger)'
+  parent: NBUCurrencyRatesService.Configuration.Config
+  langs:
+  - csharp
+  - vb
+  name: Config(IConfiguration, ILogger)
+  nameWithType: Config.Config(IConfiguration, ILogger)
+  fullName: NBUCurrencyRatesService.Configuration.Config.Config(Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.Logging.ILogger)
+  type: Constructor
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: .ctor
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 48
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Initializes a new instance of the Config class with the specified configuration and logger.
+  example: []
+  syntax:
+    content: public Config(IConfiguration configuration, ILogger logger)
+    parameters:
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: Configuration instance for managing service settings.
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger
+      description: Logger instance for logging messages.
+    content.vb: Public Sub New(configuration As IConfiguration, logger As ILogger)
+  overload: NBUCurrencyRatesService.Configuration.Config.#ctor*
+  nameWithType.vb: Config.New(IConfiguration, ILogger)
+  fullName.vb: NBUCurrencyRatesService.Configuration.Config.New(Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.Logging.ILogger)
+  name.vb: New(IConfiguration, ILogger)
+- uid: NBUCurrencyRatesService.Configuration.Config.Reload
+  commentId: M:NBUCurrencyRatesService.Configuration.Config.Reload
+  id: Reload
+  parent: NBUCurrencyRatesService.Configuration.Config
+  langs:
+  - csharp
+  - vb
+  name: Reload()
+  nameWithType: Config.Reload()
+  fullName: NBUCurrencyRatesService.Configuration.Config.Reload()
+  type: Method
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: Reload
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 61
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Reloads the configuration settings.
+  example: []
+  syntax:
+    content: public void Reload()
+    content.vb: Public Sub Reload()
+  overload: NBUCurrencyRatesService.Configuration.Config.Reload*
+- uid: NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration
+  commentId: M:NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration
+  id: GetDefaultConfiguration
+  parent: NBUCurrencyRatesService.Configuration.Config
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultConfiguration()
+  nameWithType: Config.GetDefaultConfiguration()
+  fullName: NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration()
+  type: Method
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/Config.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: GetDefaultConfiguration
+    path: NBUCurrencyRatesService/Configuration/Config.cs
+    startLine: 71
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Gets the default configuration settings.
+  example: []
+  syntax:
+    content: public static IConfiguration GetDefaultConfiguration()
+    return:
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: Default configuration settings.
+    content.vb: Public Shared Function GetDefaultConfiguration() As IConfiguration
+  overload: NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration*
+references:
+- uid: NBUCurrencyRatesService.Configuration
+  commentId: N:NBUCurrencyRatesService.Configuration
+  href: NBUCurrencyRatesService.html
+  name: NBUCurrencyRatesService.Configuration
+  nameWithType: NBUCurrencyRatesService.Configuration
+  fullName: NBUCurrencyRatesService.Configuration
+  spec.csharp:
+  - uid: NBUCurrencyRatesService
+    name: NBUCurrencyRatesService
+    href: NBUCurrencyRatesService.html
+  - name: .
+  - uid: NBUCurrencyRatesService.Configuration
+    name: Configuration
+    href: NBUCurrencyRatesService.Configuration.html
+  spec.vb:
+  - uid: NBUCurrencyRatesService
+    name: NBUCurrencyRatesService
+    href: NBUCurrencyRatesService.html
+  - name: .
+  - uid: NBUCurrencyRatesService.Configuration
+    name: Configuration
+    href: NBUCurrencyRatesService.Configuration.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NBUCurrencyRatesService.Configuration.OutputType
+  commentId: T:NBUCurrencyRatesService.Configuration.OutputType
+  parent: NBUCurrencyRatesService.Configuration
+  href: NBUCurrencyRatesService.Configuration.OutputType.html
+  name: OutputType
+  nameWithType: OutputType
+  fullName: NBUCurrencyRatesService.Configuration.OutputType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NBUCurrencyRatesService.Configuration.Config.#ctor*
+  commentId: Overload:NBUCurrencyRatesService.Configuration.Config.#ctor
+  href: NBUCurrencyRatesService.Configuration.Config.html#NBUCurrencyRatesService_Configuration_Config__ctor_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Logging_ILogger_
+  name: Config
+  nameWithType: Config.Config
+  fullName: NBUCurrencyRatesService.Configuration.Config.Config
+  nameWithType.vb: Config.New
+  fullName.vb: NBUCurrencyRatesService.Configuration.Config.New
+  name.vb: New
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: Microsoft.Extensions.Logging.ILogger
+  commentId: T:Microsoft.Extensions.Logging.ILogger
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
+  name: ILogger
+  nameWithType: ILogger
+  fullName: Microsoft.Extensions.Logging.ILogger
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: NBUCurrencyRatesService.Configuration.Config.Reload*
+  commentId: Overload:NBUCurrencyRatesService.Configuration.Config.Reload
+  href: NBUCurrencyRatesService.Configuration.Config.html#NBUCurrencyRatesService_Configuration_Config_Reload
+  name: Reload
+  nameWithType: Config.Reload
+  fullName: NBUCurrencyRatesService.Configuration.Config.Reload
+- uid: NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration*
+  commentId: Overload:NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration
+  href: NBUCurrencyRatesService.Configuration.Config.html#NBUCurrencyRatesService_Configuration_Config_GetDefaultConfiguration
+  name: GetDefaultConfiguration
+  nameWithType: Config.GetDefaultConfiguration
+  fullName: NBUCurrencyRatesService.Configuration.Config.GetDefaultConfiguration

@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: NBUCurrencyRatesService.Configuration.OutputType
+  commentId: T:NBUCurrencyRatesService.Configuration.OutputType
+  id: OutputType
+  parent: NBUCurrencyRatesService.Configuration
+  children:
+  - NBUCurrencyRatesService.Configuration.OutputType.csv
+  - NBUCurrencyRatesService.Configuration.OutputType.json
+  - NBUCurrencyRatesService.Configuration.OutputType.xml
+  langs:
+  - csharp
+  - vb
+  name: OutputType
+  nameWithType: OutputType
+  fullName: NBUCurrencyRatesService.Configuration.OutputType
+  type: Enum
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/OutputType.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: OutputType
+    path: NBUCurrencyRatesService/Configuration/OutputType.cs
+    startLine: 7
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Enumeration defining the output types for saving currency rates.
+  example: []
+  syntax:
+    content: public enum OutputType
+    content.vb: Public Enum OutputType
+- uid: NBUCurrencyRatesService.Configuration.OutputType.json
+  commentId: F:NBUCurrencyRatesService.Configuration.OutputType.json
+  id: json
+  parent: NBUCurrencyRatesService.Configuration.OutputType
+  langs:
+  - csharp
+  - vb
+  name: json
+  nameWithType: OutputType.json
+  fullName: NBUCurrencyRatesService.Configuration.OutputType.json
+  type: Field
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/OutputType.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: json
+    path: NBUCurrencyRatesService/Configuration/OutputType.cs
+    startLine: 13
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Output type for JSON format.
+  example: []
+  syntax:
+    content: json = 0
+    return:
+      type: NBUCurrencyRatesService.Configuration.OutputType
+- uid: NBUCurrencyRatesService.Configuration.OutputType.csv
+  commentId: F:NBUCurrencyRatesService.Configuration.OutputType.csv
+  id: csv
+  parent: NBUCurrencyRatesService.Configuration.OutputType
+  langs:
+  - csharp
+  - vb
+  name: csv
+  nameWithType: OutputType.csv
+  fullName: NBUCurrencyRatesService.Configuration.OutputType.csv
+  type: Field
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/OutputType.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: csv
+    path: NBUCurrencyRatesService/Configuration/OutputType.cs
+    startLine: 18
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Output type for CSV format.
+  example: []
+  syntax:
+    content: csv = 1
+    return:
+      type: NBUCurrencyRatesService.Configuration.OutputType
+- uid: NBUCurrencyRatesService.Configuration.OutputType.xml
+  commentId: F:NBUCurrencyRatesService.Configuration.OutputType.xml
+  id: xml
+  parent: NBUCurrencyRatesService.Configuration.OutputType
+  langs:
+  - csharp
+  - vb
+  name: xml
+  nameWithType: OutputType.xml
+  fullName: NBUCurrencyRatesService.Configuration.OutputType.xml
+  type: Field
+  source:
+    remote:
+      path: NBUCurrencyRatesService/Configuration/OutputType.cs
+      branch: master
+      repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
+    id: xml
+    path: NBUCurrencyRatesService/Configuration/OutputType.cs
+    startLine: 23
+  assemblies:
+  - NBUCurrencyRatesService
+  namespace: NBUCurrencyRatesService.Configuration
+  summary: Output type for XML format.
+  example: []
+  syntax:
+    content: xml = 2
+    return:
+      type: NBUCurrencyRatesService.Configuration.OutputType
+references:
+- uid: NBUCurrencyRatesService.Configuration
+  commentId: N:NBUCurrencyRatesService.Configuration
+  href: NBUCurrencyRatesService.html
+  name: NBUCurrencyRatesService.Configuration
+  nameWithType: NBUCurrencyRatesService.Configuration
+  fullName: NBUCurrencyRatesService.Configuration
+  spec.csharp:
+  - uid: NBUCurrencyRatesService
+    name: NBUCurrencyRatesService
+    href: NBUCurrencyRatesService.html
+  - name: .
+  - uid: NBUCurrencyRatesService.Configuration
+    name: Configuration
+    href: NBUCurrencyRatesService.Configuration.html
+  spec.vb:
+  - uid: NBUCurrencyRatesService
+    name: NBUCurrencyRatesService
+    href: NBUCurrencyRatesService.html
+  - name: .
+  - uid: NBUCurrencyRatesService.Configuration
+    name: Configuration
+    href: NBUCurrencyRatesService.Configuration.html
+- uid: NBUCurrencyRatesService.Configuration.OutputType
+  commentId: T:NBUCurrencyRatesService.Configuration.OutputType
+  parent: NBUCurrencyRatesService.Configuration
+  href: NBUCurrencyRatesService.Configuration.OutputType.html
+  name: OutputType
+  nameWithType: OutputType
+  fullName: NBUCurrencyRatesService.Configuration.OutputType

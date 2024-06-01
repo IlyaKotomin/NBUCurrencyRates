@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>NBU Currency Rates Service | NBUCurrencyService </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NBU Currency Rates Service | NBUCurrencyService ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/IlyaKotomin/NBUCurrencyRates/blob/master/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="NBUCurrencyService">
+            NBUCurrencyService
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nbu-currency-rates-service">NBU Currency Rates Service</h1>
+
+<hr>
+<p>Windows service for working with exchange rates of the National Bank of Ukraine written in .NET Core 8.0 | C# 12</p>
+<hr>
+<h2 id="cli-commands">CLI Commands:</h2>
+<hr>
+<h3 id="install">Install</h3>
+<pre><code class="lang-bash">sc create &quot;NBU Rates Service&quot; binpath=&quot;path/to/NBURatesService.exe&quot;
+</code></pre>
+<h3 id="uninstall">Uninstall</h3>
+<pre><code class="lang-bash">sc delete &quot;NBU Rates Service&quot;
+</code></pre>
+<h3 id="set-autostart">Set autostart</h3>
+<pre><code class="lang-Bash">sc config &quot;NBU Rates Service&quot; start= auto
+</code></pre>
+<hr>
+<h2 id="configuration">Configuration</h2>
+<p>The configuration file <code>config.js</code> is located in the folder the executable file <code>NBURatesService.exe</code> and looks like this:</p>
+<pre><code class="lang-json">{
+  //In milliseconds
+  &quot;FetchFrequency&quot;: 5000,
+
+  //The output will be in the folder with the executable file if the field is empty
+  &quot;OutputPath&quot;: &quot;&quot;,
+
+  //The output file name will be Rates if the field is empty
+  &quot;OutputFileName&quot;: &quot;&quot;,
+  
+  //The output file type name will be json if the field is empty 
+  //              (You can use this types: xml, json, csv)
+  &quot;FileType&quot;: &quot;&quot;          
+}
+</code></pre>
+<p>The program configuration is reloaded before each data fetch, so after changing the configuration file, all settings are automatically applied without restarting the service.</p>
+<p>Thanks to this, the file can be overwritten in other programs and dynamically change saving settings.</p>
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+<hr>
+<h3 id="os-and-framework">OS And Framework:</h3>
+<pre><code>Windows
+.NET Core 8.0
+</code></pre>
+<h3 id="nuget-packages">NuGet Packages:</h3>
+<ul>
+<li><p>They are used to correctly start the service on a Windows system.</p>
+<ul>
+<li><code>Microsoft.Extensions.Hosting</code></li>
+<li><code>Microsoft.Extensions.Hosting.WindowsServices</code></li>
+</ul>
+</li>
+<li><p>Json serialization and deserialization for API Models:</p>
+<ul>
+<li><code>Newtonsoft.Json</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="control-codes">Control codes?</h2>
+<p>This project does NOT use control codes to control the service, since this is outdated (<code>ServiceBase.OnCustomCommand(Int32)</code>) and is not an appropriate method of application communication.</p>
+<p>In place, the configuration is updated itself before loading data from the API
+without using codes. (Since the information in the API is rarely updated, auto-updating the config does not require many resources)</p>
+<p><code>PS: using WindowsServiceLifetime is a bad practice due to the  fact that the source code is poorly written.  ServiceBase is only suitable for .NET Framwork,  which is an outdated technology so my choise is BackgraoundService</code></p>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="how-can-i-find-out-what-error-is-stopping-the-service">How can I find out what error is stopping the service?</h3>
+<p>Use <code>Event Viewer</code> (Windows App)!
+There you can also see all the service
+logs. I recommend adding
+&quot;Custom View&quot; to view logs only for this service</p>
+<h3 id="frequent-problems-from-logs">Frequent problems from logs:</h3>
+<ul>
+<li>Error! Can not get data from <a href="https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json">https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json</a>
+<ul>
+<li>Solution: Check your internet connection</li>
+</ul>
+</li>
+<li>Config error
+<ul>
+<li>Solution: Replace your config.json to new one (see #Configuration)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="code-overview">Code Overview:</h1>
+<hr>
+<h2 id="class-overview-config">Class Overview: <code>Config</code></h2>
+<p>This repository contains a configuration class for the NBU Currency Rates Service. The <code>Config</code> class is responsible for initializing and managing configuration settings used by the service, including fetching frequencies, output file types, file names, and paths.</p>
+<h3 id="namespace">Namespace</h3>
+<p><code>NBUCurrencyRatesService.Configuration</code></p>
+<h3 id="purpose">Purpose</h3>
+<p>The <code>Config</code> class handles the setup and management of configuration settings for the NBU Currency Rates Service. It reads configurations from a JSON file and provides mechanisms for reloading configurations dynamically.</p>
+<h3 id="constructor">Constructor</h3>
+<pre><code class="lang-csharp">public Config(IConfiguration configuration, ILogger logger)
+</code></pre>
+<ul>
+<li><strong>Parameters:</strong>
+<ul>
+<li><code>configuration</code>: An instance of <code>IConfiguration</code> to access configuration settings.</li>
+<li><code>logger</code>: An instance of <code>ILogger</code> to log information.</li>
+</ul>
+</li>
+</ul>
+<h3 id="fields">Fields</h3>
+<ul>
+<li><code>private readonly ILogger _logger;</code></li>
+<li><code>private IConfiguration _configuration;</code></li>
+<li><code>public int FetchFrequency;</code></li>
+<li><code>public OutputType FileType;</code></li>
+<li><code>public string OutputFileName;</code></li>
+<li><code>public string OutputPath;</code></li>
+</ul>
+<h3 id="methods">Methods</h3>
+<h4 id="configiconfiguration-configuration-ilogger-logger"><code>Config(IConfiguration configuration, ILogger logger)</code></h4>
+<p>Constructor that initializes the <code>Config</code> class with the provided <code>configuration</code> and <code>logger</code>. It calls the <code>Initialize</code> method to load configuration settings.</p>
+<h4 id="void-reload"><code>void Reload()</code></h4>
+<p>Reloads the configuration settings by reinitializing with the default configuration. Logs the reload action.</p>
+<h4 id="static-iconfiguration-getdefaultconfiguration"><code>static IConfiguration GetDefaultConfiguration()</code></h4>
+<p>Builds and returns the default configuration from the <code>config.json</code> file located at the application's base directory.</p>
+<h4 id="private-void-initializeiconfiguration-configuration"><code>private void Initialize(IConfiguration configuration)</code></h4>
+<p>Initializes the configuration settings from the provided <code>configuration</code> object. It sets the <code>FetchFrequency</code>, <code>OutputPath</code>, <code>OutputFileName</code>, and <code>FileType</code> fields.</p>
+<h3 id="configuration-settings">Configuration Settings</h3>
+<ul>
+<li><strong>FetchFrequency</strong>: The frequency (in ms) at which the service fetches currency rates.</li>
+<li><strong>FileType</strong>: The type of output file (JSON, CSV, XML).</li>
+<li><strong>OutputFileName</strong>: The name of the output file.</li>
+<li><strong>OutputPath</strong>: The path where the output file will be saved.</li>
+</ul>
+<h3 id="example-configuration-configjson">Example Configuration (<code>config.json</code>)</h3>
+<pre><code class="lang-json">{
+  &quot;FetchFrequency&quot;: &quot;15000&quot;,
+  &quot;OutputFileName&quot;: &quot;CurrencyRates&quot;,
+  &quot;OutputPath&quot;: &quot;D:/Rates&quot;,
+  &quot;FileType&quot;: &quot;JSON&quot;
+}
+</code></pre>
+<h3 id="usage">Usage</h3>
+<ol>
+<li>Create an instance of the <code>Config</code> class by passing an <code>IConfiguration</code> object and an <code>ILogger</code> object.</li>
+<li>Use the <code>Reload</code> method to reload the configuration settings if needed.</li>
+</ol>
+<h3 id="sample-code">Sample Code</h3>
+<pre><code class="lang-csharp">var configuration = Config.GetDefaultConfiguration();
+var logger = LoggerFactory.Create(builder =&gt; builder.AddConsole()).CreateLogger&lt;Config&gt;();
+var config = new Config(configuration, logger);
+
+Console.WriteLine($&quot;Fetch Frequency: {config.FetchFrequency}&quot;);
+Console.WriteLine($&quot;Output File Type: {config.FileType}&quot;);
+Console.WriteLine($&quot;Output File Name: {config.OutputFileName}&quot;);
+Console.WriteLine($&quot;Output Path: {config.OutputPath}&quot;);
+</code></pre>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Ensure that the <code>config.json</code> file is present in the base directory of the application.</li>
+<li>The <code>FileType</code> field is parsed as an enumeration, ensure the value in the configuration file matches one of the <code>OutputType</code> enumeration values.</li>
+<li>Logging is enabled to track configuration reloads and other operations.</li>
+</ul>
+<hr>
+<h2 id="class-overview-nbugrabber">Class Overview: <code>NBUGrabber</code></h2>
+<p>This repository contains a service class for fetching currency rates from the National Bank of Ukraine (NBU) API. The <code>NBUGrabber</code> class is responsible for making HTTP requests to the NBU API and deserializing the response into a list of currency rate objects.</p>
+<h3 id="namespace-1">Namespace</h3>
+<p><code>NBUCurrencyRatesService.API</code></p>
+<h3 id="purpose-1">Purpose</h3>
+<p>The <code>NBUGrabber</code> class handles the fetching of currency rates from the NBU API. It sends HTTP requests to the specified API endpoint, retrieves the data in JSON format, and deserializes it into a list of <code>CurrencyRate</code> objects.</p>
+<h3 id="constructor-1">Constructor</h3>
+<pre><code class="lang-csharp">public NBUGrabber(ILogger logger)
+</code></pre>
+<ul>
+<li><strong>Parameter:</strong>
+<ul>
+<li><code>logger</code>: An instance of <code>ILogger</code> to log information and errors.</li>
+</ul>
+</li>
+</ul>
+<h3 id="fields-1">Fields</h3>
+<ul>
+<li><code>private const string ApiUrl = &quot;https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json&quot;;</code></li>
+</ul>
+<h3 id="methods-1">Methods</h3>
+<h4 id="public-async-tasklistcurrencyrate-fetchrates"><code>public async Task&lt;List&lt;CurrencyRate&gt;?&gt; FetchRates()</code></h4>
+<p>Fetches the currency rates from the NBU API.</p>
+<ul>
+<li><strong>Returns:</strong>
+<ul>
+<li>A <code>Task</code> that represents the asynchronous operation. The task result contains a list of <code>CurrencyRate</code> objects or <code>null</code> if an error occurs.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dependencies-1">Dependencies</h3>
+<ul>
+<li><strong>Newtonsoft.Json</strong>: Used for deserializing the JSON response from the API.</li>
+</ul>
+<h3 id="usage-1">Usage</h3>
+<ol>
+<li>Create an instance of the <code>NBUGrabber</code> class by passing an <code>ILogger</code> object.</li>
+<li>Call the <code>FetchRates</code> method to fetch currency rates from the NBU API.</li>
+</ol>
+<h3 id="example-code">Example Code</h3>
+<pre><code class="lang-csharp">var logger = LoggerFactory.Create(builder =&gt; builder.AddConsole()).CreateLogger&lt;NBUGrabber&gt;();
+var grabber = new NBUGrabber(logger);
+
+var rates = await grabber.FetchRates();
+if (rates != null)
+{
+    foreach (var rate in rates)
+    {
+        Console.WriteLine($&quot;Currency: {rate.CurrencyCode}, Rate: {rate.Rate}&quot;);
+    }
+}
+else
+{
+    Console.WriteLine(&quot;Failed to fetch currency rates.&quot;);
+}
+</code></pre>
+<h3 id="logging">Logging</h3>
+<ul>
+<li>Logs an informational message when fetching data from the API.</li>
+<li>Logs an error message if an exception occurs during the fetch operation.</li>
+</ul>
+<h3 id="notes-1">Notes</h3>
+<ul>
+<li>Ensure that the <code>CurrencyRate</code> class is defined to match the structure of the JSON response from the NBU API.</li>
+<li>The <code>FetchRates</code> method uses <code>HttpClient</code> to send HTTP requests. Make sure to handle the proper disposal of <code>HttpClient</code> if used in a different context.</li>
+</ul>
+<h3 id="currencyrate-class"><code>CurrencyRate</code> Class</h3>
+<pre><code class="lang-csharp">public class CurrencyRate
+{
+    // ReSharper disable StringLiteralTypo
+    [JsonProperty(&quot;r030&quot;)] public int R030 { get; set; }
+    [JsonProperty(&quot;txt&quot;)] public string? FullName { get; set; }
+    [JsonProperty(&quot;cc&quot;)] public string? CurrencyCode { get; set; }
+    [JsonProperty(&quot;rate&quot;)] public float Rate { get; set; }
+
+    [JsonProperty(&quot;exchangedate&quot;)] public string? ExchangeDate { get; set; }
+    // ReSharper restore StringLiteralTypo
+}
+</code></pre>
+<h3 id="api-url">API URL</h3>
+<ul>
+<li>The NBU API URL used to fetch currency rates is <code>https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json</code>.</li>
+</ul>
+<hr>
+<h2 id="class-overview-rateswriter">Class Overview: <code>RatesWriter</code></h2>
+<p>This repository contains a service class for saving currency rates to various file formats. The <code>RatesWriter</code> class provides methods to save currency rates as JSON, CSV, or XML files based on the specified output type.</p>
+<h3 id="namespace-2">Namespace</h3>
+<p><code>NBUCurrencyRatesService.API</code></p>
+<h3 id="purpose-2">Purpose</h3>
+<p>The <code>RatesWriter</code> class is responsible for saving currency rates to files in different formats. It accepts a collection of currency rates, a file path, a file name, and the desired output type (JSON, CSV, or XML). Based on the output type, it writes the rates to the corresponding file format.</p>
+<h3 id="constructor-2">Constructor</h3>
+<pre><code class="lang-csharp">public RatesWriter(ILogger logger)
+</code></pre>
+<ul>
+<li><strong>Parameter:</strong>
+<ul>
+<li><code>logger</code>: An instance of <code>ILogger</code> to log information and errors.</li>
+</ul>
+</li>
+</ul>
+<h3 id="methods-2">Methods</h3>
+<h4 id="public-void-saveienumerablecurrencyrate-rates-string-path-string-filename-outputtype-filetype"><code>public void Save(IEnumerable&lt;CurrencyRate&gt; rates, string path, string fileName, OutputType fileType)</code></h4>
+<p>Saves the currency rates to a file based on the specified output type.</p>
+<ul>
+<li><strong>Parameters:</strong>
+<ul>
+<li><code>rates</code>: A collection of currency rates to be saved.</li>
+<li><code>path</code>: The directory path where the file will be saved.</li>
+<li><code>fileName</code>: The name of the file to be saved.</li>
+<li><code>fileType</code>: The output file type (JSON, CSV, or XML).</li>
+</ul>
+</li>
+</ul>
+<h3 id="dependencies-2">Dependencies</h3>
+<ul>
+<li><strong>Newtonsoft.Json</strong>: Used for serializing/deserializing JSON data.</li>
+<li><strong>System.Xml.Serialization</strong>: Used for serializing/deserializing XML data.</li>
+</ul>
+<h3 id="usage-2">Usage</h3>
+<ol>
+<li>Create an instance of the <code>RatesWriter</code> class by passing an <code>ILogger</code> object.</li>
+<li>Call the <code>Save</code> method with the currency rates, file path, file name, and output type to save the rates to the desired file format.</li>
+</ol>
+<h3 id="example-code-1">Example Code</h3>
+<pre><code class="lang-csharp">var logger = LoggerFactory.Create(builder =&gt; builder.AddConsole()).CreateLogger&lt;RatesWriter&gt;();
+var writer = new RatesWriter(logger);
+
+var rates = GetCurrencyRates(); // Some magic to get Currency Rates (NBUGrabber for exampele)
+var path = &quot;/path/to/save&quot;;
+var fileName = &quot;CurrencyRates&quot;;
+
+writer.Save(rates, path, fileName, OutputType.Json);
+</code></pre>
+<h3 id="logging-1">Logging</h3>
+<ul>
+<li>Logs an error if the provided path or file name is empty.</li>
+<li>Logs an informational message after successfully saving the rates to a file.</li>
+</ul>
+<h3 id="notes-2">Notes</h3>
+<ul>
+<li>The <code>Save</code> method uses switch-case statements to determine the output file type and calls the corresponding private method (<code>SaveJson</code>, <code>SaveCsv</code>, or <code>SaveXml</code>) accordingly.</li>
+</ul>
+<h3 id="file-formats">File Formats</h3>
+<ul>
+<li><strong>JSON</strong>: Currency rates are saved as JSON objects in a <code>.json</code> file.</li>
+<li><strong>CSV</strong>: Currency rates are saved as comma-separated values in a <code>.csv</code> file.</li>
+<li><strong>XML</strong>: Currency rates are saved as XML elements in an <code>.xml</code> file.</li>
+</ul>
+<h3 id="example-json-output">Example JSON Output</h3>
+<pre><code class="lang-json">[
+  {
+    &quot;r030&quot;: 36,
+    &quot;txt&quot;: &quot;Австралійський долар&quot;,
+    &quot;cc&quot;: &quot;AUD&quot;,
+    &quot;rate&quot;: 26.9573,
+    &quot;exchangedate&quot;: &quot;03.06.2024&quot;
+  },
+  {
+    &quot;r030&quot;: 124,
+    &quot;txt&quot;: &quot;Канадський долар&quot;,
+    &quot;cc&quot;: &quot;CAD&quot;,
+    &quot;rate&quot;: 29.7151,
+    &quot;exchangedate&quot;: &quot;03.06.2024&quot;
+  }
+]
+</code></pre>
+<h3 id="example-csv-output">Example CSV Output</h3>
+<pre><code>R030,FullName,CurrencyCode,Rate,ExchangeDate
+36,Австралійський долар,AUD,26.9573,03.06.2024
+124,Канадський долар,CAD,29.7151,03.06.2024
+156,Юань Женьміньбі,CNY,5.5984,03.06.2024
+203,Чеська крона,CZK,1.7796,03.06.2024
+208,Данська крона,DKK,5.8972,03.06.2024
+344,Гонконгівський долар,HKD,5.1853,03.06.2024
+</code></pre>
+<h3 id="example-xml-output">Example XML Output</h3>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;ArrayOfCurrencyRate xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+  &lt;CurrencyRate&gt;
+    &lt;R030&gt;36&lt;/R030&gt;
+    &lt;FullName&gt;Австралійський долар&lt;/FullName&gt;
+    &lt;CurrencyCode&gt;AUD&lt;/CurrencyCode&gt;
+    &lt;Rate&gt;26.9573&lt;/Rate&gt;
+    &lt;ExchangeDate&gt;03.06.2024&lt;/ExchangeDate&gt;
+  &lt;/CurrencyRate&gt;
+  &lt;CurrencyRate&gt;
+    &lt;R030&gt;124&lt;/R030&gt;
+    &lt;FullName&gt;Канадський долар&lt;/FullName&gt;
+    &lt;CurrencyCode&gt;CAD&lt;/CurrencyCode&gt;
+    &lt;Rate&gt;29.7151&lt;/Rate&gt;
+    &lt;ExchangeDate&gt;03.06.2024&lt;/ExchangeDate&gt;
+  &lt;/CurrencyRate&gt;
+&lt;/ArrayOfCurrencyRate&gt;
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/IlyaKotomin/NBUCurrencyRates/blob/master/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

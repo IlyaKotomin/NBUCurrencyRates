@@ -1,0 +1,24 @@
+### YamlMime:TableOfContent
+items:
+- uid: NBUCurrencyRatesService
+  name: NBUCurrencyRatesService
+  items:
+  - uid: NBUCurrencyRatesService.Worker
+    name: Worker
+- uid: NBUCurrencyRatesService.API
+  name: NBUCurrencyRatesService.API
+  items:
+  - uid: NBUCurrencyRatesService.API.CurrencyRate
+    name: CurrencyRate
+  - uid: NBUCurrencyRatesService.API.NBUGrabber
+    name: NBUGrabber
+  - uid: NBUCurrencyRatesService.API.RatesWriter
+    name: RatesWriter
+- uid: NBUCurrencyRatesService.Configuration
+  name: NBUCurrencyRatesService.Configuration
+  items:
+  - uid: NBUCurrencyRatesService.Configuration.Config
+    name: Config
+  - uid: NBUCurrencyRatesService.Configuration.OutputType
+    name: OutputType
+memberLayout: SamePage

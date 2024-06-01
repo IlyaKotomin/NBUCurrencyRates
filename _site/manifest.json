@@ -1,0 +1,188 @@
+{
+  "source_base_path": "E:/DevProjects/NBUCurrencyRates",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NBUCurrencyRatesService/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "NBUCurrencyRatesService/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NBUCurrencyRatesService/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "NBUCurrencyRatesService/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "NBUCurrencyRatesService/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "NBUCurrencyRatesService/toc.html"
+        },
+        ".json": {
+          "relative_path": "NBUCurrencyRatesService/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.API.CurrencyRate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.API.CurrencyRate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.API.NBUGrabber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.API.NBUGrabber.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.API.RatesWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.API.RatesWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.API.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.API.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.Configuration.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.Configuration.Config.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.Configuration.OutputType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.Configuration.OutputType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.Worker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.Worker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NBUCurrencyRatesService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NBUCurrencyRatesService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

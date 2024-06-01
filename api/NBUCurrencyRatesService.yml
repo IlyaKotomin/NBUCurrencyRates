@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: NBUCurrencyRatesService
+  commentId: N:NBUCurrencyRatesService
+  id: NBUCurrencyRatesService
+  children:
+  - NBUCurrencyRatesService.Worker
+  langs:
+  - csharp
+  - vb
+  name: NBUCurrencyRatesService
+  nameWithType: NBUCurrencyRatesService
+  fullName: NBUCurrencyRatesService
+  type: Namespace
+  assemblies:
+  - NBUCurrencyRatesService
+references:
+- uid: NBUCurrencyRatesService.Worker
+  commentId: T:NBUCurrencyRatesService.Worker
+  href: NBUCurrencyRatesService.Worker.html
+  name: Worker
+  nameWithType: Worker
+  fullName: NBUCurrencyRatesService.Worker

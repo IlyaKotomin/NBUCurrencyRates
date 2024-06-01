@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: NBUCurrencyRatesService.API
+  commentId: N:NBUCurrencyRatesService.API
+  id: NBUCurrencyRatesService.API
+  children:
+  - NBUCurrencyRatesService.API.CurrencyRate
+  - NBUCurrencyRatesService.API.NBUGrabber
+  - NBUCurrencyRatesService.API.RatesWriter
+  langs:
+  - csharp
+  - vb
+  name: NBUCurrencyRatesService.API
+  nameWithType: NBUCurrencyRatesService.API
+  fullName: NBUCurrencyRatesService.API
+  type: Namespace
+  assemblies:
+  - NBUCurrencyRatesService
+references:
+- uid: NBUCurrencyRatesService.API.CurrencyRate
+  commentId: T:NBUCurrencyRatesService.API.CurrencyRate
+  href: NBUCurrencyRatesService.API.CurrencyRate.html
+  name: CurrencyRate
+  nameWithType: CurrencyRate
+  fullName: NBUCurrencyRatesService.API.CurrencyRate
+- uid: NBUCurrencyRatesService.API.NBUGrabber
+  commentId: T:NBUCurrencyRatesService.API.NBUGrabber
+  href: NBUCurrencyRatesService.API.NBUGrabber.html
+  name: NBUGrabber
+  nameWithType: NBUGrabber
+  fullName: NBUCurrencyRatesService.API.NBUGrabber
+- uid: NBUCurrencyRatesService.API.RatesWriter
+  commentId: T:NBUCurrencyRatesService.API.RatesWriter
+  href: NBUCurrencyRatesService.API.RatesWriter.html
+  name: RatesWriter
+  nameWithType: RatesWriter
+  fullName: NBUCurrencyRatesService.API.RatesWriter

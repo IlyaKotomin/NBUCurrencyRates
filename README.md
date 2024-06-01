@@ -84,8 +84,8 @@ without using codes. (Since the information in the API is rarely updated, auto-u
 
 `PS:
 using WindowsServiceLifetime is a bad practice due to the 
-fact that the source code is poorly written. 
-ServiceBase is only suitable for .NET Framwork, 
+fact that the source code of this class is poorly written. 
+ServiceBase is only suitable for .NET Framework, 
 which is an outdated technology so my choise is BackgraoundService`
 
 ---

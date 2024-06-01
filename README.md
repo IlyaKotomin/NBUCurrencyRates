@@ -205,7 +205,7 @@ Console.WriteLine($"Output Path: {config.OutputPath}");
 
 ## Class Overview: `NBUGrabber`
 
-This repository contains a service class for fetching currency rates from the National Bank of Ukraine (NBU) API. The `NBUGrabber` class is responsible for making HTTP requests to the NBU API and deserializing the response into a list of currency rate objects.
+A service class for fetching currency rates from the National Bank of Ukraine (NBU) API. The `NBUGrabber` class is responsible for making HTTP requests to the NBU API and deserializing the response into a list of currency rate objects.
 
 ### Namespace
 
@@ -300,7 +300,7 @@ public class CurrencyRate
 
 ## Class Overview: `RatesWriter`
 
-This repository contains a service class for saving currency rates to various file formats. The `RatesWriter` class provides methods to save currency rates as JSON, CSV, or XML files based on the specified output type.
+A service class for saving currency rates to various file formats. The `RatesWriter` class provides methods to save currency rates as JSON, CSV, or XML files based on the specified output type.
 
 ### Namespace
 

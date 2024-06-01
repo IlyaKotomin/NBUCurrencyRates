@@ -6,7 +6,7 @@ Windows service for working with exchange rates of the National Bank of Ukraine 
 
 ---
 
-## CLI Commands:
+## CLI Commands (Powershell):
 
 ---
 

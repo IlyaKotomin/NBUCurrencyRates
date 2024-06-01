@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Worker.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: Worker
     path: NBUCurrencyRatesService/Worker.cs
@@ -65,7 +65,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Worker.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: .ctor
     path: NBUCurrencyRatesService/Worker.cs
@@ -106,7 +106,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Worker.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: ExecuteAsync
     path: NBUCurrencyRatesService/Worker.cs

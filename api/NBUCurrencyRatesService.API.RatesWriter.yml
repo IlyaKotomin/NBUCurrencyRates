@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/RatesWriter.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: RatesWriter
     path: NBUCurrencyRatesService/API/RatesWriter.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/RatesWriter.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: .ctor
     path: NBUCurrencyRatesService/API/RatesWriter.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/RatesWriter.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: Save
     path: NBUCurrencyRatesService/API/RatesWriter.cs

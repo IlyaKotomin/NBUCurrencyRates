@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/NBUGrabber.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: NBUGrabber
     path: NBUCurrencyRatesService/API/NBUGrabber.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/NBUGrabber.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: .ctor
     path: NBUCurrencyRatesService/API/NBUGrabber.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/NBUGrabber.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: FetchRates
     path: NBUCurrencyRatesService/API/NBUGrabber.cs

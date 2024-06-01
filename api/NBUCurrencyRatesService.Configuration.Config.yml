@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: Config
     path: NBUCurrencyRatesService/Configuration/Config.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: FetchFrequency
     path: NBUCurrencyRatesService/Configuration/Config.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: FileType
     path: NBUCurrencyRatesService/Configuration/Config.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: OutputFileName
     path: NBUCurrencyRatesService/Configuration/Config.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: OutputPath
     path: NBUCurrencyRatesService/Configuration/Config.cs
@@ -175,7 +175,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: .ctor
     path: NBUCurrencyRatesService/Configuration/Config.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: Reload
     path: NBUCurrencyRatesService/Configuration/Config.cs
@@ -241,7 +241,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/Configuration/Config.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: GetDefaultConfiguration
     path: NBUCurrencyRatesService/Configuration/Config.cs

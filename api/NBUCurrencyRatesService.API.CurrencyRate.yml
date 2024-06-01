@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/CurrencyRate.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: CurrencyRate
     path: NBUCurrencyRatesService/API/CurrencyRate.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/CurrencyRate.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: R030
     path: NBUCurrencyRatesService/API/CurrencyRate.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/CurrencyRate.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: FullName
     path: NBUCurrencyRatesService/API/CurrencyRate.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/CurrencyRate.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: CurrencyCode
     path: NBUCurrencyRatesService/API/CurrencyRate.cs
@@ -186,7 +186,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/CurrencyRate.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: Rate
     path: NBUCurrencyRatesService/API/CurrencyRate.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: NBUCurrencyRatesService/API/CurrencyRate.cs
-      branch: master
+      branch: GitHubPages
       repo: https://github.com/IlyaKotomin/NBUCurrencyRates.git
     id: ExchangeDate
     path: NBUCurrencyRatesService/API/CurrencyRate.cs

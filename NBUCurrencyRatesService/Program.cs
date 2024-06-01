@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging.EventLog;
 using NBUCurrencyRatesService;
 using NBUCurrencyRatesService.Configuration;
 
+#region Startup
+
 var config = Config.GetDefaultConfiguration();
 
 var builder = Host.CreateApplicationBuilder(args);
@@ -15,3 +17,5 @@ builder.Services.AddHostedService<Worker>();
 
 var host = builder.Build();
 host.Run();
+
+#endregion

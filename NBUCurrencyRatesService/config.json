@@ -1,13 +1,14 @@
 {
   //In milliseconds
   "FetchFrequency": 5000,
-  
-  //Default path is AppContext.BaseDirectory
+
+  //The output will be in the folder with the executable file if the field is empty
   "OutputPath": "",
-  
-  //Default name is Rates
-  "OutputFileName": "Rates",
-  
-  //Default name is json
-  "FileType": ""          
+
+  //The output file name will be Rates if the field is empty
+  "OutputFileName": "",
+
+  //The output file type name will be json if the field is empty 
+  //              (You can use this types: xml, json, csv)
+  "FileType": ""
 }

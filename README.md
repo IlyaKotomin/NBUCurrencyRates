@@ -112,7 +112,7 @@ logs. I recommend adding
 
 ## Class Overview: `Config`
 
-This repository contains a configuration class for the NBU Currency Rates Service. The `Config` class is responsible for initializing and managing configuration settings used by the service, including fetching frequencies, output file types, file names, and paths.
+A configuration class for the NBU Currency Rates Service. The `Config` class is responsible for initializing and managing configuration settings used by the service, including fetching frequencies, output file types, file names, and paths.
 
 ### Namespace
 

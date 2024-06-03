@@ -1,5 +1,7 @@
 ﻿# NBU Currency Rates Service
 
+## [Also Check version with Strategy Pattern](https://github.com/IlyaKotomin/NBUCurrencyRates/tree/version1.1)
+
 ---
 
 Windows service for working with exchange rates of the National Bank of Ukraine written in .NET Core 8.0 | C# 12

@@ -48,7 +48,7 @@ public class Worker(ILogger<Worker> logger, IConfiguration configuration) : Back
 
             var rates = await _grabber.FetchRates();
 
-            if (rates is { Count: 0 }) 
+            if (rates != null) 
                 _writer.Save(rates, _config.OutputPath, _config.OutputFileName, _config.FileType);
 
             logger.LogInformation("Loop done: {Date}", DateTime.Now.ToString(CultureInfo.InvariantCulture));

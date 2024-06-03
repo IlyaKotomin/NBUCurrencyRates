@@ -1,4 +1,4 @@
-﻿# NBU Currency Rates Service
+﻿# NBU Currency Rates Service (Strategy Pattern)
 
 ---
 
@@ -298,9 +298,9 @@ public class CurrencyRate
 
 ---
 
-## Class Overview: `RatesWriter`
+## Class Overview: `DataWriter`
 
-A service class for saving currency rates to various file formats. The `RatesWriter` class provides methods to save currency rates as JSON, CSV, or XML files based on the specified output type.
+A service class for saving currency rates to various file formats. The `DataWriter` class provides methods to save currency rates as JSON, CSV, or XML files based on the specified output type.
 
 ### Namespace
 
@@ -308,12 +308,12 @@ A service class for saving currency rates to various file formats. The `RatesWri
 
 ### Purpose
 
-The `RatesWriter` class is responsible for saving currency rates to files in different formats. It accepts a collection of currency rates, a file path, a file name, and the desired output type (JSON, CSV, or XML). Based on the output type, it writes the rates to the corresponding file format.
+The `DataWriter` class is responsible for saving currency rates to files in different formats. It accepts a collection of currency rates, a file path, a file name, and the desired output type (JSON, CSV, or XML). Based on the output type, it writes the rates to the corresponding file format.
 
 ### Constructor
 
 ```csharp
-public RatesWriter(ILogger logger)
+public DataWriter(ILogger logger)
 ```
 
 - **Parameter:**
@@ -338,14 +338,14 @@ Saves the currency rates to a file based on the specified output type.
 
 ### Usage
 
-1. Create an instance of the `RatesWriter` class by passing an `ILogger` object.
+1. Create an instance of the `DataWriter` class by passing an `ILogger` object.
 2. Call the `Save` method with the currency rates, file path, file name, and output type to save the rates to the desired file format.
 
 ### Example Code
 
 ```csharp
-var logger = LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<RatesWriter>();
-var writer = new RatesWriter(logger);
+var logger = LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<DataWriter>();
+var writer = new DataWriter(logger);
 
 var rates = GetCurrencyRates(); // Some magic to get Currency Rates (NBUGrabber for exampele)
 var path = "/path/to/save";

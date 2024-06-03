@@ -2,24 +2,23 @@
 
 namespace NBUCurrencyRatesService.API;
 
-
-///<summary>
-/// Class responsible for fetching currency rates from the NBU (National Bank of Ukraine) API.
-///</summary>
-///<param name="logger">Logger instance for logging messages.</param>
+/// <summary>
+///     Class responsible for fetching currency rates from the NBU (National Bank of Ukraine) API.
+/// </summary>
+/// <param name="logger">Logger instance for logging messages.</param>
 // ReSharper disable once InconsistentNaming
 public class NBUGrabber(ILogger logger)
 {
-    ///<summary>
-    ///URL of the NBU API for fetching currency rates.
-    ///</summary>
+    /// <summary>
+    ///     URL of the NBU API for fetching currency rates.
+    /// </summary>
     private const string ApiUrl = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
 
-    
-    ///<summary>
-    ///Fetches currency rates from the NBU API.
-    ///</summary>
-    ///<returns>List of currency rates fetched from the NBU API, or null if an error occurs.</returns>
+
+    /// <summary>
+    ///     Fetches currency rates from the NBU API.
+    /// </summary>
+    /// <returns>List of currency rates fetched from the NBU API, or null if an error occurs.</returns>
     public async Task<List<CurrencyRate>?> FetchRates()
     {
         logger.LogInformation("Fetching data from: {url}", ApiUrl);
